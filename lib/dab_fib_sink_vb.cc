@@ -27,7 +27,7 @@
 #include <stdio.h>
 
 #include <dab_fib_sink_vb.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 #include <stdexcept>
 #include "dab_fib_sink_vb.h"
 #include "crc16.h"
@@ -40,9 +40,9 @@ dab_make_fib_sink_vb ()
 }
 
 dab_fib_sink_vb::dab_fib_sink_vb()
-  : gr_sync_block ("fib_sink_vb",
-		   gr_make_io_signature(1, 1, sizeof(char)*32),
-		   gr_make_io_signature(0, 0, 0))
+  : gr::sync_block ("fib_sink_vb",
+		   gr::io_signature::make(1, 1, sizeof(char)*32),
+		   gr::io_signature::make(0, 0, 0))
 {
 }
 

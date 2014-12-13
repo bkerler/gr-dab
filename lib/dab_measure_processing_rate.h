@@ -23,7 +23,7 @@
 #ifndef INCLUDED_DAB_MEASURE_PROCESSING_RATE_H
 #define INCLUDED_DAB_MEASURE_PROCESSING_RATE_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_measure_processing_rate;
 typedef boost::shared_ptr<dab_measure_processing_rate> dab_measure_processing_rate_sptr;
@@ -40,7 +40,7 @@ dab_measure_processing_rate_sptr dab_make_measure_processing_rate(size_t itemsiz
  *
  * \ingroup sink
  */
-class dab_measure_processing_rate : public gr_sync_block
+class dab_measure_processing_rate : public gr::sync_block
 {
   friend dab_measure_processing_rate_sptr dab_make_measure_processing_rate(size_t itemsize, int samples_to_count);
 

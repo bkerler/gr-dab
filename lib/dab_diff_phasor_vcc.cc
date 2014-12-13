@@ -31,7 +31,7 @@
 
 #include <stdio.h>
 #include <dab_diff_phasor_vcc.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_diff_phasor_vcc and return
@@ -44,9 +44,9 @@ dab_make_diff_phasor_vcc (unsigned int length)
 }
 
 dab_diff_phasor_vcc::dab_diff_phasor_vcc (unsigned int length) : 
-  gr_sync_block ("diff_phasor_vcc",
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*length),
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*length)),
+  gr::sync_block ("diff_phasor_vcc",
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*length),
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*length)),
   d_length(length)
 {
   set_history(2);

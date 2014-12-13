@@ -22,13 +22,13 @@
 #ifndef INCLUDED_DAB_CORRECT_INDIVIDUAL_PHASE_OFFSET_VFF_H
 #define INCLUDED_DAB_CORRECT_INDIVIDUAL_PHASE_OFFSET_VFF_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_correct_individual_phase_offset_vff;
 
 /*
  * We use boost::shared_ptr's instead of raw pointers for all access
- * to gr_blocks (and many other data structures).  The shared_ptr gets
+ * to gr::blocks (and many other data structures).  The shared_ptr gets
  * us transparent reference counting, which greatly simplifies storage
  * management issues.  This is especially helpful in our hybrid
  * C++ / Python system.
@@ -62,7 +62,7 @@ dab_make_correct_individual_phase_offset_vff (unsigned int vlen, float alpha);
  * Note: This block only makes sense as long as the offset of the majority of
  * the samples is smaller than pi/4
  */
-class dab_correct_individual_phase_offset_vff : public gr_sync_block
+class dab_correct_individual_phase_offset_vff : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_correct_individual_phase_offset_vff to

@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_OFDM_REMOVE_FIRST_SYMBOL_VCC_H
 #define INCLUDED_DAB_OFDM_REMOVE_FIRST_SYMBOL_VCC_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
 
 class dab_ofdm_remove_first_symbol_vcc;
 
@@ -38,7 +38,7 @@ dab_ofdm_remove_first_symbol_vcc_sptr dab_make_ofdm_remove_first_symbol_vcc (uns
  * input: port 0: complex vectors; port 1: byte stream - trigger signal indicating the start of a frame
  * output: port 0: complex vectors; port 1: byte stream - trigger signal indicating the start of a frame
  */
-class dab_ofdm_remove_first_symbol_vcc : public gr_block
+class dab_ofdm_remove_first_symbol_vcc : public gr::block
 {
   private:
     // The friend declaration allows dab_make_ofdm_remove_first_symbol_vcc to

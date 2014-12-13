@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_ofdm_remove_first_symbol_vcc.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_ofdm_remove_first_symbol_vcc and return
@@ -43,9 +43,9 @@ dab_make_ofdm_remove_first_symbol_vcc (unsigned int vlen)
 }
 
 dab_ofdm_remove_first_symbol_vcc::dab_ofdm_remove_first_symbol_vcc (unsigned int vlen) : 
-  gr_block ("ofdm_remove_first_symbol_vcc",
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*vlen, sizeof(char)),
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*vlen, sizeof(char))),
+  gr::block ("ofdm_remove_first_symbol_vcc",
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*vlen, sizeof(char)),
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*vlen, sizeof(char))),
   d_vlen(vlen), d_start(0)
 {
 }

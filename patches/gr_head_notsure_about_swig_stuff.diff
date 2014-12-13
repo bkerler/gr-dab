@@ -1,7 +1,7 @@
-Index: gnuradio-core/src/lib/general/gr_head.cc
+Index: gnuradio-runtime/src/lib/general/gr_head.cc
 ===================================================================
---- gnuradio-core/src/lib/general/gr_head.cc	(revision 8534)
-+++ gnuradio-core/src/lib/general/gr_head.cc	(working copy)
+--- gnuradio-runtime/src/lib/general/gr_head.cc	(revision 8534)
++++ gnuradio-runtime/src/lib/general/gr_head.cc	(working copy)
 @@ -35,10 +35,10 @@
  {
  }
@@ -15,10 +15,10 @@ Index: gnuradio-core/src/lib/general/gr_head.cc
  }
  
  int
-Index: gnuradio-core/src/lib/general/gr_head.h
+Index: gnuradio-runtime/src/lib/general/gr_head.h
 ===================================================================
---- gnuradio-core/src/lib/general/gr_head.h	(revision 8534)
-+++ gnuradio-core/src/lib/general/gr_head.h	(working copy)
+--- gnuradio-runtime/src/lib/general/gr_head.h	(revision 8534)
++++ gnuradio-runtime/src/lib/general/gr_head.h	(working copy)
 @@ -26,6 +26,9 @@
  #include <gr_sync_block.h>
  #include <stddef.h>			// size_t
@@ -52,10 +52,10 @@ Index: gnuradio-core/src/lib/general/gr_head.h
  gr_make_head (size_t sizeof_stream_item, int nitems);
  
  
-Index: gnuradio-core/src/lib/general/gr_head.i
+Index: gnuradio-runtime/src/lib/general/gr_head.i
 ===================================================================
---- gnuradio-core/src/lib/general/gr_head.i	(revision 8534)
-+++ gnuradio-core/src/lib/general/gr_head.i	(working copy)
+--- gnuradio-runtime/src/lib/general/gr_head.i	(revision 8534)
++++ gnuradio-runtime/src/lib/general/gr_head.i	(working copy)
 @@ -20,11 +20,13 @@
   * Boston, MA 02110-1301, USA.
   */

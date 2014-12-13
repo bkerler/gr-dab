@@ -99,7 +99,7 @@ libgnuradio_dab_la_SOURCES = \
 	crc16.cc
 
 libgnuradio_dab_la_LIBADD = \
-	$(GNURADIO_CORE_LA)
+	$(GNURADIO_RUNTIME_LA)
 
 libgnuradio_dab_la_LDFLAGS = $(NO_UNDEFINED) $(LTVERSIONFLAGS)
 
@@ -135,4 +135,4 @@ noinst_PROGRAMS = \
 	test_all
 
 test_all_SOURCES = test_all.cc
-test_all_LDADD   = libgnuradio-dab-qa.la
+test_all_LDADD   = libgnuradio-dab-qa.la -lboost_system -lboost_filesystem

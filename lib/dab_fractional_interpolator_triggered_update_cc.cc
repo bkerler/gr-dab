@@ -26,9 +26,9 @@
 
 #include <stdio.h>
 
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 #include <dab_fractional_interpolator_triggered_update_cc.h>
-#include <gri_mmse_fir_interpolator_cc.h>
+#include <gnuradio/filter/mmse_fir_interpolator_cc.h>
 #include <stdexcept>
 
 // Public constructor
@@ -38,10 +38,10 @@ dab_fractional_interpolator_triggered_update_cc_sptr dab_make_fractional_interpo
 }
 
 dab_fractional_interpolator_triggered_update_cc::dab_fractional_interpolator_triggered_update_cc(float phase_shift, float interp_ratio)
-  : gr_block ("fractional_interpolator_triggered_update_cc",
-        gr_make_io_signature2 (2, 2, sizeof (gr_complex), sizeof(char)),
-        gr_make_io_signature (1, 1, sizeof (gr_complex))),
-    d_mu (phase_shift), d_mu_inc (interp_ratio), d_next_mu_inc(interp_ratio), d_interp(new gri_mmse_fir_interpolator_cc())
+  : gr::block ("fractional_interpolator_triggered_update_cc",
+        gr::io_signature::make2 (2, 2, sizeof (gr_complex), sizeof(char)),
+        gr::io_signature::make (1, 1, sizeof (gr_complex))),
+    d_mu (phase_shift), d_mu_inc (interp_ratio), d_next_mu_inc(interp_ratio), d_interp(new gr::filter::mmse_fir_interpolator_cc())
 {
   if (interp_ratio <=  0)
     throw std::out_of_range ("interpolation ratio must be > 0");

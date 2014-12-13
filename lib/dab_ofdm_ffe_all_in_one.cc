@@ -32,8 +32,8 @@
 #include <stdio.h>
 
 #include <dab_ofdm_ffe_all_in_one.h>
-#include <gr_io_signature.h>
-#include <gr_math.h>
+#include <gnuradio/io_signature.h>
+#include <gnuradio/math.h>
 
 /*
  * Create a new instance of dab_ofdm_ffe_all_in_one and return
@@ -46,9 +46,9 @@ dab_make_ofdm_ffe_all_in_one (unsigned int symbol_length, unsigned int fft_lengt
 }
 
 dab_ofdm_ffe_all_in_one::dab_ofdm_ffe_all_in_one (unsigned int symbol_length, unsigned int fft_length, unsigned int num_symbols, float alpha, unsigned int sample_rate) : 
-  gr_sync_block ("ofdm_ffe_all_in_one",
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex), sizeof(char)),
-             gr_make_io_signature (1, 1, sizeof(float))),
+  gr::sync_block ("ofdm_ffe_all_in_one",
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex), sizeof(char)),
+             gr::io_signature::make (1, 1, sizeof(float))),
   d_symbol_length(symbol_length), d_fft_length(fft_length), d_num_symbols(num_symbols), d_alpha(alpha), d_sample_rate(sample_rate), d_cur_symbol(num_symbols), d_cur_sample(0), d_ffs_error_sum(0), d_estimated_error(0), d_estimated_error_per_sample(0)
 {
   assert(symbol_length<=2*fft_length); /* cyclic prefix can not be longer than fft_length .. */
@@ -65,7 +65,7 @@ dab_ofdm_ffe_all_in_one::calc_ffe_estimate(const gr_complex *in) {
   for (int i=0;i<cp_length;i++)
     sum += in[i] * conj(in[i+d_fft_length]);
 
-  return gr_fast_atan2f(sum);
+  return gr::fast_atan2f(sum);
 }
 
 
@@ -133,7 +133,7 @@ dab_ofdm_ffe_all_in_one::work (int noutput_items,
           d_estimated_error = d_alpha*d_ffs_error_sum + (1-d_alpha)*d_estimated_error; /* slow adjustment */
 
         d_estimated_error_per_sample = d_estimated_error / (float)d_fft_length;
-        fprintf(stderr, "ofdm_ffe_all_in_one: d_estimated_error: %f (%3.2f Hz)\n", d_estimated_error, d_estimated_error_per_sample*d_sample_rate/(2*M_PI));
+//        fprintf(stderr, "ofdm_ffe_all_in_one: d_estimated_error: %f (%3.2f Hz)\n", d_estimated_error, d_estimated_error_per_sample*d_sample_rate/(2*M_PI));
       }
 
       d_cur_symbol++;

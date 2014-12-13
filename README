@@ -18,7 +18,7 @@
 This directory (and the resulting tarball) contains a build tree for
 gr-dab.
 
-This package requires that gnuradio-core is already installed.  It
+This package requires that gnuradio-runtime is already installed.  It
 also depends on some GNU Radio prerequisites, such as Boost and
 cppunit.
 

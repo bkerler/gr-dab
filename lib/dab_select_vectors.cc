@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_select_vectors.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_select_vectors and return
@@ -43,9 +43,9 @@ dab_make_select_vectors (size_t itemsize, unsigned int length, unsigned int num_
 }
 
 dab_select_vectors::dab_select_vectors (size_t itemsize, unsigned int length, unsigned int num_select, unsigned int num_skip) : 
-  gr_block ("select_vectors",
-             gr_make_io_signature2 (2, 2, itemsize*length, sizeof(char)),
-             gr_make_io_signature2 (2, 2, itemsize*length, sizeof(char))),
+  gr::block ("select_vectors",
+             gr::io_signature::make2 (2, 2, itemsize*length, sizeof(char)),
+             gr::io_signature::make2 (2, 2, itemsize*length, sizeof(char))),
   d_itemsize(itemsize), d_length(length), d_num_select(num_select), d_num_skip(num_skip), d_index(num_select+num_skip) /* <- dont output anything before 1st trigger */
 {
   assert(d_num_select!=0);

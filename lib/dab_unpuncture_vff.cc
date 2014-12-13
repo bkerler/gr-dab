@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_unpuncture_vff.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_unpuncture_vff and return
@@ -52,9 +52,9 @@ unsigned int dab_unpuncture_vff::ones (const std::vector<unsigned char> &punctur
 }
 
 dab_unpuncture_vff::dab_unpuncture_vff (const std::vector<unsigned char> &puncturing_vector, float fillval) : 
-  gr_sync_block ("unpuncture_vff",
-             gr_make_io_signature (1, 1, sizeof(float)*ones(puncturing_vector)),
-             gr_make_io_signature (1, 1, sizeof(float)*puncturing_vector.size())),
+  gr::sync_block ("unpuncture_vff",
+             gr::io_signature::make (1, 1, sizeof(float)*ones(puncturing_vector)),
+             gr::io_signature::make (1, 1, sizeof(float)*puncturing_vector.size())),
   d_puncturing_vector(puncturing_vector), d_fillval(fillval)
 {
   d_vlen_in  = ones(puncturing_vector);

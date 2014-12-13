@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_QPSK_MAPPER_VBC_H
 #define INCLUDED_DAB_QPSK_MAPPER_VBC_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 #define I_SQRT2 0.707106781187
 
@@ -30,7 +30,7 @@ class dab_qpsk_mapper_vbc;
 
 /*
  * We use boost::shared_ptr's instead of raw pointers for all access
- * to gr_blocks (and many other data structures).  The shared_ptr gets
+ * to gr::blocks (and many other data structures).  The shared_ptr gets
  * us transparent reference counting, which greatly simplifies storage
  * management issues.  This is especially helpful in our hybrid
  * C++ / Python system.
@@ -59,7 +59,7 @@ dab_make_qpsk_mapper_vbc (int symbol_length);
  * input: byte vectors
  * output: symbol vectors
  */
-class dab_qpsk_mapper_vbc : public gr_sync_block
+class dab_qpsk_mapper_vbc : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_qpsk_mapper_vbc to

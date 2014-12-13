@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_UNPUNCTURE_VFF_H
 #define INCLUDED_DAB_UNPUNCTURE_VFF_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_unpuncture_vff;
 
@@ -40,7 +40,7 @@ dab_make_unpuncture_vff (const std::vector<unsigned char> &puncturing_vector, fl
  * input: byte vector whose length equals the number of ones in the puncturing vector
  * output: byte vector whose length equeals the length of the puncturing vector
  */
-class dab_unpuncture_vff : public gr_sync_block
+class dab_unpuncture_vff : public gr::sync_block
 {
   private:
     friend dab_unpuncture_vff_sptr

@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_moving_sum_cc.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_moving_sum_cc and return
@@ -45,7 +45,7 @@ dab_make_moving_sum_cc (int length)
 /*
  * Specify constraints on number of input and output streams.
  * This info is used to construct the input and output signatures
- * (2nd & 3rd args to gr_block's constructor).  The input and
+ * (2nd & 3rd args to gr::block's constructor).  The input and
  * output signatures are used by the runtime system to
  * check that a valid number and type of inputs and outputs
  * are connected to this block.  In this case, we accept
@@ -60,9 +60,9 @@ static const int MAX_OUT = 1; // maximum number of output streams
  * The private constructor
  */
 dab_moving_sum_cc::dab_moving_sum_cc (int length)
-  : gr_sync_block ("moving_sum_cc",
-       gr_make_io_signature (MIN_IN, MAX_IN, sizeof (gr_complex)),
-       gr_make_io_signature (MIN_OUT, MAX_OUT, sizeof (gr_complex))),
+  : gr::sync_block ("moving_sum_cc",
+       gr::io_signature::make (MIN_IN, MAX_IN, sizeof (gr_complex)),
+       gr::io_signature::make (MIN_OUT, MAX_OUT, sizeof (gr_complex))),
     d_sum(0), d_length(length)
 {
   assert(length>=0);

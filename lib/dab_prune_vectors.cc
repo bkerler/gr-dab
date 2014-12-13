@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_prune_vectors.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_prune_vectors and return
@@ -43,9 +43,9 @@ dab_make_prune_vectors (size_t itemsize, unsigned int length, unsigned int prune
 }
 
 dab_prune_vectors::dab_prune_vectors (size_t itemsize, unsigned int length, unsigned int prune_start, unsigned int prune_end) : 
-  gr_sync_block ("prune_vectors",
-             gr_make_io_signature (1, 1, itemsize*length),
-             gr_make_io_signature (1, 1, itemsize*(length-prune_start-prune_end))),
+  gr::sync_block ("prune_vectors",
+             gr::io_signature::make (1, 1, itemsize*length),
+             gr::io_signature::make (1, 1, itemsize*(length-prune_start-prune_end))),
   d_itemsize(itemsize), d_length(length), d_prune_start(prune_start), d_prune_end(prune_end)
 {
   assert(prune_start+prune_end < length);

@@ -25,7 +25,7 @@
 #endif
 
 #include <dab_measure_ber_b.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 #include <stdexcept>
 
 dab_measure_ber_b_sptr
@@ -35,9 +35,9 @@ dab_make_measure_ber_b ()
 }
 
 dab_measure_ber_b::dab_measure_ber_b()
-  : gr_sync_block ("measure_ber_b",
-		   gr_make_io_signature2(2, 2, sizeof(char), sizeof(char)),
-		   gr_make_io_signature(0, 0, 0)),
+  : gr::sync_block ("measure_ber_b",
+		   gr::io_signature::make2(2, 2, sizeof(char), sizeof(char)),
+		   gr::io_signature::make(0, 0, 0)),
     d_bytes(0), d_errors(0)
 {
 }

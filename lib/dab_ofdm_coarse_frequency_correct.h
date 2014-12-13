@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_OFDM_COARSE_FREQUENCY_CORRECT_H
 #define INCLUDED_DAB_OFDM_COARSE_FREQUENCY_CORRECT_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_ofdm_coarse_frequency_correct;
 
@@ -46,7 +46,7 @@ dab_make_ofdm_coarse_frequency_correct (unsigned int fft_length, unsigned int nu
  *
  * Additionally, this block corrects the phase jump introduced by removing the cyclic prefix.
  */
-class dab_ofdm_coarse_frequency_correct : public gr_sync_block
+class dab_ofdm_coarse_frequency_correct : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_ofdm_coarse_frequency_correct to
@@ -71,6 +71,7 @@ class dab_ofdm_coarse_frequency_correct : public gr_sync_block
     int work (int noutput_items,
               gr_vector_const_void_star &input_items,
               gr_vector_void_star &output_items);
+    int get_delta_f() { return d_delta_f; };
 };
 
 #endif /* INCLUDED_DAB_OFDM_COARSE_FREQUENCY_CORRECT_H */

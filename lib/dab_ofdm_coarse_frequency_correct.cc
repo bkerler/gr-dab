@@ -32,8 +32,8 @@
 #include <stdio.h>
 
 #include <dab_ofdm_coarse_frequency_correct.h>
-#include <gr_io_signature.h>
-#include <gr_expj.h>
+#include <gnuradio/io_signature.h>
+#include <gnuradio/expj.h>
 
 #define M_TWOPI (2*M_PI)
 
@@ -48,9 +48,9 @@ dab_make_ofdm_coarse_frequency_correct (unsigned int fft_length, unsigned int nu
 }
 
 dab_ofdm_coarse_frequency_correct::dab_ofdm_coarse_frequency_correct (unsigned int fft_length, unsigned int num_carriers, unsigned int cp_length) : 
-  gr_sync_block ("ofdm_coarse_frequency_correct",
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*fft_length, sizeof(char)),
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*num_carriers, sizeof(char))),
+  gr::sync_block ("ofdm_coarse_frequency_correct",
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*fft_length, sizeof(char)),
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*num_carriers, sizeof(char))),
   d_fft_length(fft_length), d_num_carriers(num_carriers), d_cp_length(cp_length), 
   d_symbol_num(0), d_freq_offset(0), d_delta_f(0)
 {

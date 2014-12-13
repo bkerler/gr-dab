@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_QPSK_DEMAPPER_VCB_H
 #define INCLUDED_DAB_QPSK_DEMAPPER_VCB_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_qpsk_demapper_vcb;
 
@@ -43,7 +43,7 @@ dab_make_qpsk_demapper_vcb (int symbol_length);
  * input: symbol vectors
  * output: byte vectors
  */
-class dab_qpsk_demapper_vcb : public gr_sync_block
+class dab_qpsk_demapper_vcb : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_qpsk_demapper_vcb to

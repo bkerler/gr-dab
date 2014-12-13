@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_qpsk_mapper_vbc.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_qpsk_mapper_vbc and return
@@ -43,9 +43,9 @@ dab_make_qpsk_mapper_vbc (int symbol_length)
 }
 
 dab_qpsk_mapper_vbc::dab_qpsk_mapper_vbc (int symbol_length) : 
-  gr_sync_block ("qpsk_mapper_vbc",
-             gr_make_io_signature (1, 1, sizeof(char)*symbol_length/4),
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*symbol_length)),
+  gr::sync_block ("qpsk_mapper_vbc",
+             gr::io_signature::make (1, 1, sizeof(char)*symbol_length/4),
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*symbol_length)),
   d_symbol_length(symbol_length)
 {
   assert(symbol_length>0);

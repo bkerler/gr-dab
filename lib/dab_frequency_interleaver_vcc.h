@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_FREQUENCY_INTERLEAVER_VCC_H
 #define INCLUDED_DAB_FREQUENCY_INTERLEAVER_VCC_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_frequency_interleaver_vcc;
 
@@ -39,7 +39,7 @@ dab_make_frequency_interleaver_vcc (const std::vector<short> &interleaving_seque
  * input: complex vectors
  * output: complex vectors with reordered elements
  */
-class dab_frequency_interleaver_vcc : public gr_sync_block
+class dab_frequency_interleaver_vcc : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_frequency_interleaver_vcc to

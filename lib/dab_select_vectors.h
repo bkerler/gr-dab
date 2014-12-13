@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_SELECT_VECTORS_H
 #define INCLUDED_DAB_SELECT_VECTORS_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
 
 class dab_select_vectors;
 
@@ -45,7 +45,7 @@ dab_make_select_vectors (size_t itemsize, unsigned int length, unsigned int num_
  * input: port 0: vectors; port 1: new trigger signal (char)
  * output: port 0: selected vectors; port 1: new trigger signal (char)
  */
-class dab_select_vectors : public gr_block
+class dab_select_vectors : public gr::block
 {
   private:
     // The friend declaration allows dab_make_select_vectors to

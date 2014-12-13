@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_BLOCK_PARTITIONING_VBB_H
 #define INCLUDED_DAB_BLOCK_PARTITIONING_VBB_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
 
 class dab_repartition_vectors;
 
@@ -51,7 +51,7 @@ dab_make_repartition_vectors (size_t itemsize, unsigned int vlen_in, unsigned in
  *
  * the blocks are always aligned to the trigger signal
  */
-class dab_repartition_vectors : public gr_block
+class dab_repartition_vectors : public gr::block
 {
   private:
     // The friend declaration allows dab_make_repartition_vectors to

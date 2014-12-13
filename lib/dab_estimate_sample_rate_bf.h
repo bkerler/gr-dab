@@ -22,13 +22,13 @@
 #ifndef INCLUDED_DAB_ESTIMATE_SAMPLE_RATE_BF_H
 #define INCLUDED_DAB_ESTIMATE_SAMPLE_RATE_BF_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_estimate_sample_rate_bf;
 
 /*
  * We use boost::shared_ptr's instead of raw pointers for all access
- * to gr_blocks (and many other data structures).  The shared_ptr gets
+ * to gr::blocks (and many other data structures).  The shared_ptr gets
  * us transparent reference counting, which greatly simplifies storage
  * management issues.  This is especially helpful in our hybrid
  * C++ / Python system.
@@ -58,7 +58,7 @@ dab_estimate_sample_rate_bf_sptr dab_make_estimate_sample_rate_bf (float expecte
  * input: byte stream with frame starts
  * output: float stream with sample rate estimation
  */
-class dab_estimate_sample_rate_bf : public gr_sync_block
+class dab_estimate_sample_rate_bf : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_estimate_sample_rate_bf to

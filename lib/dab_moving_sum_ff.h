@@ -22,13 +22,13 @@
 #ifndef INCLUDED_DAB_MOVING_SUM_FF_H
 #define INCLUDED_DAB_MOVING_SUM_FF_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_moving_sum_ff;
 
 /*
  * We use boost::shared_ptr's instead of raw pointers for all access
- * to gr_blocks (and many other data structures).  The shared_ptr gets
+ * to gr::blocks (and many other data structures).  The shared_ptr gets
  * us transparent reference counting, which greatly simplifies storage
  * management issues.  This is especially helpful in our hybrid
  * C++ / Python system.
@@ -60,7 +60,7 @@ dab_moving_sum_ff_sptr dab_make_moving_sum_ff (int length);
  * (linear time instead of O(n*m)). On the other hand, since only the diff is
  * calculated for each sample, there is some chance of an accumulating error.
  */
-class dab_moving_sum_ff : public gr_sync_block
+class dab_moving_sum_ff : public gr::sync_block
 {
 private:
   // The friend declaration allows dab_make_moving_sum_ff to

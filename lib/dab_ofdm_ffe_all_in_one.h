@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_OFDM_FFE_ALL_IN_ONE_H
 #define INCLUDED_DAB_OFDM_FFE_ALL_IN_ONE_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_ofdm_ffe_all_in_one;
 
@@ -44,7 +44,7 @@ dab_ofdm_ffe_all_in_one_sptr dab_make_ofdm_ffe_all_in_one (unsigned int symbol_l
  *
  * this is an all in one version of ffe in ofdm_sync_dab.py, because the flow graph does not allow to only calculate the estimation when its needed
  */
-class dab_ofdm_ffe_all_in_one : public gr_sync_block
+class dab_ofdm_ffe_all_in_one : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_ofdm_ffe_all_in_one to

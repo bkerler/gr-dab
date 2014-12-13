@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_frequency_interleaver_vcc.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_frequency_interleaver_vcc and return
@@ -43,9 +43,9 @@ dab_make_frequency_interleaver_vcc (const std::vector<short> &interleaving_seque
 }
 
 dab_frequency_interleaver_vcc::dab_frequency_interleaver_vcc (const std::vector<short> &interleaving_sequence) : 
-  gr_sync_block ("frequency_interleaver_vcc",
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*interleaving_sequence.size()),
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*interleaving_sequence.size())),
+  gr::sync_block ("frequency_interleaver_vcc",
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*interleaving_sequence.size()),
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*interleaving_sequence.size())),
   d_interleaving_sequence(interleaving_sequence), d_length(interleaving_sequence.size())
 {
   for (unsigned int i=0; i<d_length; i++) 

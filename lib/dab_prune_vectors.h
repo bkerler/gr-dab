@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_PRUNE_VECTORS_H
 #define INCLUDED_DAB_PRUNE_VECTORS_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_prune_vectors;
 
@@ -45,7 +45,7 @@ dab_make_prune_vectors (size_t itemsize, unsigned int length, unsigned int prune
  *
  * constraint: prune_start + prune_end < length
  */
-class dab_prune_vectors : public gr_sync_block
+class dab_prune_vectors : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_prune_vectors to

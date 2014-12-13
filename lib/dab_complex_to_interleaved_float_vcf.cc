@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_complex_to_interleaved_float_vcf.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_complex_to_interleaved_float_vcf and return
@@ -43,9 +43,9 @@ dab_make_complex_to_interleaved_float_vcf (unsigned int length)
 }
 
 dab_complex_to_interleaved_float_vcf::dab_complex_to_interleaved_float_vcf (unsigned int length) : 
-  gr_sync_block ("complex_to_interleaved_float_vcf",
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*length),
-             gr_make_io_signature (1, 1, sizeof(float)*length*2)),
+  gr::sync_block ("complex_to_interleaved_float_vcf",
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*length),
+             gr::io_signature::make (1, 1, sizeof(float)*length*2)),
   d_length(length)
 {
 }

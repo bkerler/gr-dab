@@ -23,7 +23,7 @@
 #ifndef INCLUDED_DAB_FIB_SINK_B_H
 #define INCLUDED_DAB_FIB_SINK_B_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_fib_sink_vb;
 typedef boost::shared_ptr<dab_fib_sink_vb> dab_fib_sink_vb_sptr;
@@ -37,7 +37,7 @@ dab_fib_sink_vb_sptr dab_make_fib_sink_vb();
  *
  * \ingroup sink
  */
-class dab_fib_sink_vb : public gr_sync_block
+class dab_fib_sink_vb : public gr::sync_block
 {
   friend dab_fib_sink_vb_sptr dab_make_fib_sink_vb();
 

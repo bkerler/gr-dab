@@ -23,7 +23,7 @@
 #ifndef INCLUDED_DAB_PUNCTURE_VBB_H
 #define INCLUDED_DAB_PUNCTURE_VBB_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_puncture_vbb;
 
@@ -40,7 +40,7 @@ dab_make_puncture_vbb (const std::vector<unsigned char> &puncturing_vector);
  * input: byte vector whose length equals the length of the puncturing vector
  * output: byte vector whose length equeals the number of ones in the puncturing vector
  */
-class dab_puncture_vbb : public gr_sync_block
+class dab_puncture_vbb : public gr::sync_block
 {
   private:
     friend dab_puncture_vbb_sptr

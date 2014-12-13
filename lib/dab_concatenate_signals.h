@@ -23,7 +23,7 @@
 #ifndef INCLUDED_DAB_CONCATENATE_SIGNALS_H
 #define INCLUDED_DAB_CONCATENATE_SIGNALS_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
 
 class dab_concatenate_signals;
 typedef boost::shared_ptr<dab_concatenate_signals> dab_concatenate_signals_sptr;
@@ -41,7 +41,7 @@ dab_concatenate_signals_sptr dab_make_concatenate_signals (size_t itemsize);
  * Note: Altough this block works with simple vectors, it seems that samples
  * get lost when more complicated blocks are used.
  */
-class dab_concatenate_signals : public gr_block
+class dab_concatenate_signals : public gr::block
 {
   private:
     friend dab_concatenate_signals_sptr dab_make_concatenate_signals (size_t itemsize);

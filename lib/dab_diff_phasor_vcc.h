@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_DIFF_PHASOR_VCC_H
 #define INCLUDED_DAB_DIFF_PHASOR_VCC_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_diff_phasor_vcc;
 
@@ -40,7 +40,7 @@ dab_make_diff_phasor_vcc (unsigned int length);
  * 
  * \param length length of the vector
  */
-class dab_diff_phasor_vcc : public gr_sync_block
+class dab_diff_phasor_vcc : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_diff_phasor_vcc to

@@ -1,7 +1,7 @@
-Index: gnuradio-core/src/python/gnuradio/blks2impl/channel_model.py
+Index: gnuradio-runtime/src/python/gnuradio/blks2impl/channel_model.py
 ===================================================================
---- gnuradio-core/src/python/gnuradio/blks2impl/channel_model.py	(revision 8484)
-+++ gnuradio-core/src/python/gnuradio/blks2impl/channel_model.py	(working copy)
+--- gnuradio-runtime/src/python/gnuradio/blks2impl/channel_model.py	(revision 8484)
++++ gnuradio-runtime/src/python/gnuradio/blks2impl/channel_model.py	(working copy)
 @@ -23,7 +23,7 @@
  from gnuradio import gr
  

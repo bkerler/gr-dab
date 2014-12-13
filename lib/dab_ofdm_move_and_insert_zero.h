@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_OFDM_MOVE_AND_INSERT_ZERO_H
 #define INCLUDED_DAB_OFDM_MOVE_AND_INSERT_ZERO_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_ofdm_move_and_insert_zero;
 
@@ -41,7 +41,7 @@ dab_make_ofdm_move_and_insert_zero (unsigned int fft_length,
  * input: complex vector with symbols
  * output: complex vector length fft_length
  */
-class dab_ofdm_move_and_insert_zero : public gr_sync_block
+class dab_ofdm_move_and_insert_zero : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_ofdm_move_and_insert_zero to

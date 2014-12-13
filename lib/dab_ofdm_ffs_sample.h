@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_OFDM_FFS_SAMPLE_H
 #define INCLUDED_DAB_OFDM_FFS_SAMPLE_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_ofdm_ffs_sample;
 
@@ -42,7 +42,7 @@ dab_ofdm_ffs_sample_sptr dab_make_ofdm_ffs_sample (unsigned int symbol_length, u
  * input: port 0: float - actual data; port 1: byte - trigger signal indicating the start of a frame
  * output: float fine frequency offset estimation (in radian per sample)
  */
-class dab_ofdm_ffs_sample : public gr_sync_block
+class dab_ofdm_ffs_sample : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_ofdm_ffs_sample to

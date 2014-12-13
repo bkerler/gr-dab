@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_OFDM_INSERT_PILOT_VCC_H
 #define INCLUDED_DAB_OFDM_INSERT_PILOT_VCC_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
 
 class dab_ofdm_insert_pilot_vcc;
 
@@ -40,7 +40,7 @@ dab_ofdm_insert_pilot_vcc_sptr dab_make_ofdm_insert_pilot_vcc (const std::vector
  *
  * The pilot symbol vector must have the same width as the other symbols
  */
-class dab_ofdm_insert_pilot_vcc : public gr_block
+class dab_ofdm_insert_pilot_vcc : public gr::block
 {
   private:
     // The friend declaration allows dab_make_ofdm_insert_pilot_vcc to

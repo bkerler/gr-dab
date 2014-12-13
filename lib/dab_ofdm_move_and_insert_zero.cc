@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_ofdm_move_and_insert_zero.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_ofdm_move_and_insert_zero and return
@@ -43,9 +43,9 @@ dab_make_ofdm_move_and_insert_zero (unsigned int fft_length, unsigned int num_ca
 }
 
 dab_ofdm_move_and_insert_zero::dab_ofdm_move_and_insert_zero (unsigned int fft_length, unsigned int num_carriers) : 
-  gr_sync_block ("ofdm_move_and_insert_zero",
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*num_carriers),
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*fft_length)),
+  gr::sync_block ("ofdm_move_and_insert_zero",
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*num_carriers),
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*fft_length)),
   d_fft_length(fft_length), d_num_carriers(num_carriers)
 {
   d_zeros_on_left = (d_fft_length-d_num_carriers)/2;

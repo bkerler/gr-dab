@@ -32,7 +32,7 @@
 #include <stdio.h>
 
 #include <dab_ofdm_ffs_sample.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_ofdm_ffs_sample and return
@@ -45,9 +45,9 @@ dab_make_ofdm_ffs_sample (unsigned int symbol_length, unsigned int fft_length, u
 }
 
 dab_ofdm_ffs_sample::dab_ofdm_ffs_sample (unsigned int symbol_length, unsigned int fft_length, unsigned int num_symbols, float alpha, unsigned int sample_rate) : 
-  gr_sync_block ("ofdm_ffs_sample",
-             gr_make_io_signature2 (2, 2, sizeof(float), sizeof(char)),
-             gr_make_io_signature (1, 1, sizeof(float))),
+  gr::sync_block ("ofdm_ffs_sample",
+             gr::io_signature::make2 (2, 2, sizeof(float), sizeof(char)),
+             gr::io_signature::make (1, 1, sizeof(float))),
   d_symbol_length(symbol_length), d_fft_length(fft_length), d_num_symbols(num_symbols), d_alpha(alpha), d_sample_rate(sample_rate), d_cur_symbol(num_symbols), d_cur_sample(0), d_ffs_error_sum(0), d_estimated_error(0), d_estimated_error_per_sample(0)
 {
 }

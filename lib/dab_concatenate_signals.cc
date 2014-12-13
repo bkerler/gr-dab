@@ -28,7 +28,7 @@
 #include <stdio.h>
 
 #include <dab_concatenate_signals.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 dab_concatenate_signals_sptr
 dab_make_concatenate_signals (size_t itemsize)
@@ -37,9 +37,9 @@ dab_make_concatenate_signals (size_t itemsize)
 }
 
 dab_concatenate_signals::dab_concatenate_signals (size_t itemsize)
-  : gr_block ("concatenate_signals",
-       gr_make_io_signature (1, -1, itemsize),
-       gr_make_io_signature (1,  1, itemsize)),
+  : gr::block ("concatenate_signals",
+       gr::io_signature::make (1, -1, itemsize),
+       gr::io_signature::make (1,  1, itemsize)),
     d_itemsize(itemsize), d_current_signal(0), d_callmetwice(1)
 {
 }

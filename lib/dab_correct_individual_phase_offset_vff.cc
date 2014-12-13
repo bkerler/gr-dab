@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_correct_individual_phase_offset_vff.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 #include <cmath>
 
 #define M_PI_HALF M_PI/2
@@ -47,9 +47,9 @@ dab_make_correct_individual_phase_offset_vff (unsigned int vlen, float alpha)
 }
 
 dab_correct_individual_phase_offset_vff::dab_correct_individual_phase_offset_vff (unsigned int vlen, float alpha) : 
-  gr_sync_block ("correct_individual_phase_offset_vff",
-             gr_make_io_signature (1, 1, sizeof(float)*vlen),
-             gr_make_io_signature (1, 1, sizeof(float)*vlen)),
+  gr::sync_block ("correct_individual_phase_offset_vff",
+             gr::io_signature::make (1, 1, sizeof(float)*vlen),
+             gr::io_signature::make (1, 1, sizeof(float)*vlen)),
   d_vlen(vlen), d_alpha(alpha), d_debug(0)
 {
   d_offset_estimation = new float[vlen];

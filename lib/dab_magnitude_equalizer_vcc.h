@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_MAGNITUDE_EQUALIZER_VCC_H
 #define INCLUDED_DAB_MAGNITUDE_EQUALIZER_VCC_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_magnitude_equalizer_vcc;
 
@@ -41,7 +41,7 @@ dab_magnitude_equalizer_vcc_sptr dab_make_magnitude_equalizer_vcc (unsigned int 
  *
  * this block introduces a delay of num_symbols-1 on both the data and trigger signal
  */
-class dab_magnitude_equalizer_vcc : public gr_sync_block
+class dab_magnitude_equalizer_vcc : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_magnitude_equalizer_vcc to

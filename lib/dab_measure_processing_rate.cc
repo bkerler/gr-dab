@@ -27,7 +27,7 @@
 #include <stdio.h>
 
 #include <dab_measure_processing_rate.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 #include <stdexcept>
 #include <sys/time.h>
 
@@ -38,9 +38,9 @@ dab_make_measure_processing_rate (size_t itemsize, int samples_to_count)
 }
 
 dab_measure_processing_rate::dab_measure_processing_rate(size_t itemsize, int samples_to_count)
-  : gr_sync_block ("measure_processing_rate",
-		   gr_make_io_signature(1, 1, itemsize),
-		   gr_make_io_signature(0, 0, 0)),
+  : gr::sync_block ("measure_processing_rate",
+		   gr::io_signature::make(1, 1, itemsize),
+		   gr::io_signature::make(0, 0, 0)),
     d_itemsize(itemsize), d_samples_to_count(samples_to_count), d_count(0), d_processing_rate(0)
 {
   if (gettimeofday(&d_time, NULL) != 0) {

@@ -32,7 +32,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <dab_sum_phasor_trig_vcc.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_sum_phasor_trig_vcc and return
@@ -45,9 +45,9 @@ dab_make_sum_phasor_trig_vcc (unsigned int length)
 }
 
 dab_sum_phasor_trig_vcc::dab_sum_phasor_trig_vcc (unsigned int length) : 
-  gr_sync_block ("sum_phasor_trig_vcc",
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*length, sizeof(char)), 
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*length, sizeof(char))),
+  gr::sync_block ("sum_phasor_trig_vcc",
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*length, sizeof(char)), 
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*length, sizeof(char))),
   d_length(length), d_last_symbol(length,0)
 {
 }

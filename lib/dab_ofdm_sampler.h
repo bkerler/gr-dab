@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_OFDM_SAMPLER_H
 #define INCLUDED_DAB_OFDM_SAMPLER_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
 
 class dab_ofdm_sampler;
 
@@ -41,7 +41,7 @@ dab_ofdm_sampler_sptr dab_make_ofdm_sampler (unsigned int fft_length, unsigned i
  * input: port 0: complex - actual data; port 1: byte stream with trigger signal indicating the start of a frame
  * output: port 0: complex vectors - sampled data; port 1: byte stream with trigger signal indicating the start of a frame
  */
-class dab_ofdm_sampler : public gr_block
+class dab_ofdm_sampler : public gr::block
 {
   private:
     // The friend declaration allows dab_make_ofdm_sampler to

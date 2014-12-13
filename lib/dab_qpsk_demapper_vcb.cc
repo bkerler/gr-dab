@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_qpsk_demapper_vcb.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_qpsk_demapper_vcb and return
@@ -43,9 +43,9 @@ dab_make_qpsk_demapper_vcb (int symbol_length)
 }
 
 dab_qpsk_demapper_vcb::dab_qpsk_demapper_vcb (int symbol_length) : 
-  gr_sync_block ("qpsk_demapper_vcb",
-             gr_make_io_signature (1, 1, sizeof(gr_complex)*symbol_length),
-             gr_make_io_signature (1, 1, sizeof(char)*symbol_length/4)),
+  gr::sync_block ("qpsk_demapper_vcb",
+             gr::io_signature::make (1, 1, sizeof(gr_complex)*symbol_length),
+             gr::io_signature::make (1, 1, sizeof(char)*symbol_length/4)),
   d_symbol_length(symbol_length)
 {
   assert(symbol_length>0);

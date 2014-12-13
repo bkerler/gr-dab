@@ -23,9 +23,10 @@
 #ifndef INCLUDED_DAB_FRACTIONAL_INTERPOLATOR_TRIGGERED_UPDATE_CC_H
 #define INCLUDED_DAB_FRACTIONAL_INTERPOLATOR_TRIGGERED_UPDATE_CC_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
+#include <gnuradio/filter/mmse_fir_interpolator_cc.h>
 
-class gri_mmse_fir_interpolator_cc;
+class gr::filter::mmse_fir_interpolator_cc;
 
 class dab_fractional_interpolator_triggered_update_cc;
 typedef boost::shared_ptr<dab_fractional_interpolator_triggered_update_cc> dab_fractional_interpolator_triggered_update_cc_sptr;
@@ -43,7 +44,7 @@ dab_fractional_interpolator_triggered_update_cc_sptr dab_make_fractional_interpo
  *
  * \ingroup filter
  */
-class dab_fractional_interpolator_triggered_update_cc : public gr_block
+class dab_fractional_interpolator_triggered_update_cc : public gr::block
 {
   public:
     ~dab_fractional_interpolator_triggered_update_cc ();
@@ -65,7 +66,7 @@ class dab_fractional_interpolator_triggered_update_cc : public gr_block
     float d_mu;
     float d_mu_inc;
     float d_next_mu_inc;
-    gri_mmse_fir_interpolator_cc *d_interp;
+    gr::filter::mmse_fir_interpolator_cc *d_interp;
 
     friend dab_fractional_interpolator_triggered_update_cc_sptr
     dab_make_fractional_interpolator_triggered_update_cc (float phase_shift, float interp_ratio);

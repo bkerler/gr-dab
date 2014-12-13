@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_magnitude_equalizer_vcc.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_magnitude_equalizer_vcc and return
@@ -43,9 +43,9 @@ dab_make_magnitude_equalizer_vcc (unsigned int vlen, unsigned int num_symbols)
 }
 
 dab_magnitude_equalizer_vcc::dab_magnitude_equalizer_vcc (unsigned int vlen, unsigned int num_symbols) : 
-  gr_sync_block ("magnitude_equalizer_vcc",
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*vlen, sizeof(char)),
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*vlen, sizeof(char))),
+  gr::sync_block ("magnitude_equalizer_vcc",
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*vlen, sizeof(char)),
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*vlen, sizeof(char))),
   d_vlen(vlen), d_num_symbols(num_symbols)
 {
   assert(d_num_symbols>0);

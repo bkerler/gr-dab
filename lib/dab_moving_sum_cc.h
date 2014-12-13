@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_MOVING_SUM_CC_H
 #define INCLUDED_DAB_MOVING_SUM_CC_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_moving_sum_cc;
 
@@ -42,7 +42,7 @@ dab_moving_sum_cc_sptr dab_make_moving_sum_cc (int length);
  * (linear time instead of O(n*m)). On the other hand, since only the diff is
  * calculated for each sample, there is some chance of an accumulating error.
  */
-class dab_moving_sum_cc : public gr_sync_block
+class dab_moving_sum_cc : public gr::sync_block
 {
 private:
   // The friend declaration allows dab_make_moving_sum_cc to

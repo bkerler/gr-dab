@@ -23,7 +23,7 @@
 #ifndef INCLUDED_DAB_MEASURE_BER_B_H
 #define INCLUDED_DAB_MEASURE_BER_B_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_measure_ber_b;
 typedef boost::shared_ptr<dab_measure_ber_b> dab_measure_ber_b_sptr;
@@ -38,7 +38,7 @@ dab_measure_ber_b_sptr dab_make_measure_ber_b();
  *
  * \ingroup sink
  */
-class dab_measure_ber_b : public gr_sync_block
+class dab_measure_ber_b : public gr::sync_block
 {
   friend dab_measure_ber_b_sptr dab_make_measure_ber_b();
 

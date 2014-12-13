@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_MODULO_FF_H
 #define INCLUDED_DAB_MODULO_FF_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_modulo_ff;
 
@@ -38,7 +38,7 @@ dab_modulo_ff_sptr dab_make_modulo_ff (float div);
  * input: float
  * output: float
  */
-class dab_modulo_ff : public gr_sync_block
+class dab_modulo_ff : public gr::sync_block
 {
 private:
   // The friend declaration allows dab_make_modulo_ff to

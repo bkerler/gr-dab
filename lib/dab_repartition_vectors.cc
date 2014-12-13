@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_repartition_vectors.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_repartition_vectors and return
@@ -43,9 +43,9 @@ dab_make_repartition_vectors (size_t itemsize, unsigned int vlen_in, unsigned in
 }
 
 dab_repartition_vectors::dab_repartition_vectors (size_t itemsize, unsigned int vlen_in, unsigned int vlen_out, unsigned int multiply, unsigned int divide) : 
-  gr_block ("repartition_vectors",
-             gr_make_io_signature2 (2, 2, itemsize*vlen_in, sizeof(char)),
-             gr_make_io_signature2 (2, 2, itemsize*vlen_out, sizeof(char))),
+  gr::block ("repartition_vectors",
+             gr::io_signature::make2 (2, 2, itemsize*vlen_in, sizeof(char)),
+             gr::io_signature::make2 (2, 2, itemsize*vlen_out, sizeof(char))),
   d_itemsize(itemsize), d_vlen_in(vlen_in), d_vlen_out(vlen_out), d_multiply(multiply), d_divide(divide), d_synced(0)
 {
   assert(vlen_in * multiply == vlen_out * divide);

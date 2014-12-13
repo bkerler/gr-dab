@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_INSERT_NULL_SYMBOL_H
 #define INCLUDED_DAB_INSERT_NULL_SYMBOL_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
 
 class dab_insert_null_symbol;
 
@@ -39,7 +39,7 @@ dab_insert_null_symbol_sptr dab_make_insert_null_symbol (int ns_length, int symb
  * input: port 0: complex vector stream with the actual data; port 1: trigger signal indicating the start of a frame
  * output: complex stream
  */
-class dab_insert_null_symbol : public gr_block
+class dab_insert_null_symbol : public gr::block
 {
   private:
     // The friend declaration allows dab_make_insert_null_symbol to

@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_ofdm_sampler.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_ofdm_sampler and return
@@ -46,9 +46,9 @@ dab_make_ofdm_sampler (unsigned int fft_length,
 }
 
 dab_ofdm_sampler::dab_ofdm_sampler (unsigned int fft_length, unsigned int cp_length, unsigned int symbols_per_frame, unsigned int gap) : 
-  gr_block ("ofdm_sampler",
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex), sizeof(char)),
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*fft_length, sizeof(char))),
+  gr::block ("ofdm_sampler",
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex), sizeof(char)),
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*fft_length, sizeof(char))),
   d_state(STATE_NS), d_pos(0), d_fft_length(fft_length), d_cp_length(cp_length), d_symbols_per_frame(symbols_per_frame), d_sym_nr(0), d_gap(gap), d_gap_left(0)
 {
   assert(gap<=cp_length);

@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_puncture_vbb.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_puncture_vbb and return
@@ -52,9 +52,9 @@ unsigned int dab_puncture_vbb::ones (const std::vector<unsigned char> &puncturin
 }
 
 dab_puncture_vbb::dab_puncture_vbb (const std::vector<unsigned char> &puncturing_vector) : 
-  gr_sync_block ("puncture_vbb",
-             gr_make_io_signature (1, 1, sizeof(char)*puncturing_vector.size()),
-             gr_make_io_signature (1, 1, sizeof(char)*ones(puncturing_vector))),
+  gr::sync_block ("puncture_vbb",
+             gr::io_signature::make (1, 1, sizeof(char)*puncturing_vector.size()),
+             gr::io_signature::make (1, 1, sizeof(char)*ones(puncturing_vector))),
   d_puncturing_vector(puncturing_vector)
 {
   d_vlen_in = puncturing_vector.size();

@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_insert_null_symbol.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_insert_null_symbol and return
@@ -43,9 +43,9 @@ dab_make_insert_null_symbol (int ns_length, int symbol_length)
 }
 
 dab_insert_null_symbol::dab_insert_null_symbol (int ns_length, int symbol_length) : 
-  gr_block ("insert_null_symbol",
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*symbol_length, sizeof(char)),
-             gr_make_io_signature (1, 1, sizeof(gr_complex))),
+  gr::block ("insert_null_symbol",
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*symbol_length, sizeof(char)),
+             gr::io_signature::make (1, 1, sizeof(gr_complex))),
   d_ns_length(ns_length), d_symbol_length(symbol_length), d_ns_added(0)
 {
   /* note: setting output_multiple to a high value without setting the relative rate produces

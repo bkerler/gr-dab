@@ -22,7 +22,7 @@
 #ifndef INCLUDED_DAB_COMPLEX_TO_INTERLEAVED_FLOAT_VCF_H
 #define INCLUDED_DAB_COMPLEX_TO_INTERLEAVED_FLOAT_VCF_H
 
-#include <gr_sync_block.h>
+#include <gnuradio/sync_block.h>
 
 class dab_complex_to_interleaved_float_vcf;
 
@@ -40,7 +40,7 @@ dab_make_complex_to_interleaved_float_vcf (unsigned int length);
  * input: complex vector
  * output: float vector
  */
-class dab_complex_to_interleaved_float_vcf : public gr_sync_block
+class dab_complex_to_interleaved_float_vcf : public gr::sync_block
 {
   private:
     // The friend declaration allows dab_make_complex_to_interleaved_float_vcf to

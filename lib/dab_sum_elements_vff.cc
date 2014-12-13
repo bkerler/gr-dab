@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_sum_elements_vff.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_sum_elements_vff and return
@@ -43,9 +43,9 @@ dab_make_sum_elements_vff (unsigned int length)
 }
 
 dab_sum_elements_vff::dab_sum_elements_vff (unsigned int length) : 
-  gr_sync_block ("sum_elements_vff",
-             gr_make_io_signature (1, 1, sizeof(float)*length),
-             gr_make_io_signature (1, 1, sizeof(float))),
+  gr::sync_block ("sum_elements_vff",
+             gr::io_signature::make (1, 1, sizeof(float)*length),
+             gr::io_signature::make (1, 1, sizeof(float))),
   d_length(length)
 {
 }

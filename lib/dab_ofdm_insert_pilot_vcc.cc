@@ -30,7 +30,7 @@
 #endif
 
 #include <dab_ofdm_insert_pilot_vcc.h>
-#include <gr_io_signature.h>
+#include <gnuradio/io_signature.h>
 
 /*
  * Create a new instance of dab_ofdm_insert_pilot_vcc and return
@@ -43,9 +43,9 @@ dab_make_ofdm_insert_pilot_vcc (const std::vector<gr_complex> &pilot)
 }
 
 dab_ofdm_insert_pilot_vcc::dab_ofdm_insert_pilot_vcc (const std::vector<gr_complex> &pilot) : 
-  gr_block ("ofdm_insert_pilot_vcc",
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*pilot.size(), sizeof(char)),
-             gr_make_io_signature2 (2, 2, sizeof(gr_complex)*pilot.size(), sizeof(char))),
+  gr::block ("ofdm_insert_pilot_vcc",
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*pilot.size(), sizeof(char)),
+             gr::io_signature::make2 (2, 2, sizeof(gr_complex)*pilot.size(), sizeof(char))),
   d_pilot(pilot), d_start(0)
 {
 }

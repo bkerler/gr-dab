@@ -1,7 +1,7 @@
-Index: gnuradio-core/src/lib/gengen/gr_peak_detector_XX.cc.t
+Index: gnuradio-runtime/src/lib/gengen/gr_peak_detector_XX.cc.t
 ===================================================================
---- gnuradio-core/src/lib/gengen/gr_peak_detector_XX.cc.t	(revision 8484)
-+++ gnuradio-core/src/lib/gengen/gr_peak_detector_XX.cc.t	(working copy)
+--- gnuradio-runtime/src/lib/gengen/gr_peak_detector_XX.cc.t	(revision 8484)
++++ gnuradio-runtime/src/lib/gengen/gr_peak_detector_XX.cc.t	(working copy)
 @@ -106,6 +106,6 @@
    }
    else {   // only return up to passing the threshold
