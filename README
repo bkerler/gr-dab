@@ -25,6 +25,7 @@ cppunit.
 To build the examples from the tarball use the normal recipe:
 
   $ ./configure
+  $ make clean
   $ make
   $ make check
   $ sudo make install
@@ -34,6 +35,7 @@ git doesn't contain configure or the generated Makefiles.
 
   $ ./bootstrap
   $ ./configure
+  $ make clean
   $ make
   $ make check
   $ sudo make install
