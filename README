@@ -24,18 +24,8 @@ cppunit.
 
 To build the examples from the tarball use the normal recipe:
 
-  $ ./configure
-  $ make clean
-  $ make
-  $ make check
-  $ sudo make install
-
-If you're building from git, you'll need to use this sequence, since
-git doesn't contain configure or the generated Makefiles.
-
-  $ ./bootstrap
-  $ ./configure
-  $ make clean
+  $ mkdir build
+  $ cd build && cmake ../
   $ make
   $ make check
   $ sudo make install
