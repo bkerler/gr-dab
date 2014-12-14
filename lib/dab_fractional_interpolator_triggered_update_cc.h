@@ -26,7 +26,7 @@
 #include <gnuradio/block.h>
 #include <gnuradio/filter/mmse_fir_interpolator_cc.h>
 
-class gr::filter::mmse_fir_interpolator_cc;
+class gri_mmse_fir_interpolator_cc;
 
 class dab_fractional_interpolator_triggered_update_cc;
 typedef boost::shared_ptr<dab_fractional_interpolator_triggered_update_cc> dab_fractional_interpolator_triggered_update_cc_sptr;
