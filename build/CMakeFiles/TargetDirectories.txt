@@ -1,8 +1,0 @@
-/home/bjk/gnuradio/gr-dab/build/src/lib/CMakeFiles/_dab_swig.dir
-/home/bjk/gnuradio/gr-dab/build/src/lib/CMakeFiles/_dab_swig_swig_tag.dir
-/home/bjk/gnuradio/gr-dab/build/src/lib/CMakeFiles/dab_swig_src_lib_7896b.dir
-/home/bjk/gnuradio/gr-dab/build/src/lib/CMakeFiles/gnuradio-dab.dir
-/home/bjk/gnuradio/gr-dab/build/apps/CMakeFiles/pygen_apps_a9929.dir
-/home/bjk/gnuradio/gr-dab/build/src/lib/CMakeFiles/pygen_src_lib_0d185.dir
-/home/bjk/gnuradio/gr-dab/build/src/python/CMakeFiles/pygen_src_python_5f28a.dir
-/home/bjk/gnuradio/gr-dab/build/CMakeFiles/uninstall.dir
